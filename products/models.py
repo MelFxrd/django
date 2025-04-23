@@ -4,6 +4,12 @@ class Author (models.Model):
     name = models.CharField("Полное имя", max_length=80)
     bio = models.TextField("Биография")
     
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "Автор"
+        verbose_name_plural = "Авторы"
 
 class Book (models.Model):
     title = models.CharField("Название", max_length=120)
@@ -18,3 +24,10 @@ class Book (models.Model):
     date_edit = models.DateTimeField("Дата редактирования", auto_now=True)
 
     authors = models.ManyToManyField(Author, related_name="books", verbose_name="Авторы")
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Книга"
+        verbose_name_plural = "Книги"

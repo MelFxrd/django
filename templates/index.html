@@ -7,6 +7,11 @@
 </head>
 <body>
     <h1>Главная сайт "Книги и хентайные комиксы"</h1>
-    
+    {% for book in books %}
+        <div class="card">
+            <h2 class="title-card">{{ book.title }}</h2>
+            <p class="desc-card">{{ book.desc }}</p>
+        </div>
+    {% endfor %}
 </body>
 </html>

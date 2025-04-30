@@ -11,6 +11,12 @@ class Author (models.Model):
         verbose_name = "Автор"
         verbose_name_plural = "Авторы"
 
+    def parse_object(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+        }
+
 class Book (models.Model):
     title = models.CharField("Название", max_length=120)
     desc = models.TextField("Описание")

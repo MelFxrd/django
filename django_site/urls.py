@@ -21,5 +21,6 @@ from django_site.views import index_redirect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("products/", include("products.urls")),
+    path("user/", include("user.urls")),
     path("", index_redirect)
 ]

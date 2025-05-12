@@ -123,3 +123,8 @@ STATICFILES_DIRS = [BASE_DIR / "static", ]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Настройки переадресации для авторазации
+LOGIN_REDIRECT_URL = '/user/account/' # Переход после успешного входа
+LOGIN_URL = '/user/login/' # Когда пытаемся получить доступ на защищеннй ресурс
+LOGOUT_REDIRECT_URL = "/" # Переход после выхода из учетной записи

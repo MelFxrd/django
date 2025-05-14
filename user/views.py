@@ -13,6 +13,9 @@ class UserLoginView (LoginView):
 class RegistrationView (CreateView):
     form_class = UserCreationForm
     template_name = "registration.html"
+    
+    def get_success_url(self):
+        return reverse("login")
 
 class AccountView (DetailView):
     model = User

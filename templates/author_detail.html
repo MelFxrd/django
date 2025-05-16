@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>{{ author.name }}</h1>
+    <p>{{ author.bio }}</p>
+
+    <h2>Книги:</h2>
+    <div class="author-books">
+    {% for book in author.books.all %}
+        <div class="card">
+            <h2 class="title-card">
+                <a href="{% url 'book_detail' book.id %}">{{ book.title }}</a>
+            </h2>
+            <p class="desc-card">{{ book.desc }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

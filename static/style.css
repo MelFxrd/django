@@ -25,8 +25,17 @@ body {
     padding: 20px 40px;
 }
 
+.card a {
+    color: black;
+}
+
+
 .title-card {
     margin-bottom: 20px;
+}
+
+.title-card a {
+    color: black;
 }
 
 .desc-card {
@@ -47,6 +56,10 @@ header {
 nav {
     display: flex;
     gap: 20px;
+}
+
+div a {
+    color: black ;
 }
 
 a {

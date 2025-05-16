@@ -23,3 +23,10 @@ def api_get_all_authors(request):
     # safe - чтобы отправить в качестве ответа массив, а не объект, как этого требует JsonResponse
     return JsonResponse(dataList, safe=False)
     
+def book_detail(request, pk):
+    book = Book.objects.get(pk=pk)
+    return render(request, "book_detail.html", {"book": book})
+
+def author_detail(request, pk):
+    author = Author.objects.get(pk=pk)
+    return render(request, "author_detail.html", {"author": author})

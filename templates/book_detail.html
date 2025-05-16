@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>{{ book.title }}</h1>
+    <p>{{ book.desc }}</p>
+    <p>Цена: {{ book.price }}</p>
+    <p>Дата публикации: {{ book.date_public }}</p>
+    <p>Авторы:</p>
+    <div>
+        {% for author in book.authors.all %}
+            <div>
+                <a href="{% url 'author_detail' author.id %}">{{ author.name }}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

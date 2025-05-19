@@ -5,12 +5,14 @@
 
     <form class="panel-filter" method="GET">
         <label for="author">Автор:</label>
-        <select name="author" id="author">
-            
-        </select>
+        <select name="author" id="author"></select>
+
+        <label for="year">Год после:</label>
+        <input type="number" name="year" id="year">
 
         <input type="submit" value="Найти">
     </form>
+
 
     <div class="wrap">
         {% for book in books %}

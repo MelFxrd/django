@@ -9,12 +9,20 @@ class IndexListView (ListView):
     context_object_name = "books"
 
 def catalog(request: HttpRequest):
-    # Достаю параметр маршрута
     author = request.GET.get("author")
-    if (author):
-        books = Book.objects.filter(authors=author)
-    else:
-        books = Book.objects.all()
+    year = request.GET.get("year")
+
+    books = Book.objects.all()
+
+    if author:
+        books = books.filter(authors=author)
+
+    if year:
+        try:
+            books = books.filter(date_public__year__gt=int(year))
+        except:
+            pass
+
     return render(request, "catalog.html", {"books": books})
 
 def api_get_all_authors(request):
